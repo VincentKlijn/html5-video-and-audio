@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="description" content="HTML5 Video and Audio Demo">
+	<meta name="viewport" content="width=device-width, user-scalable=no">
+	<title>HTML5 Video and Audio Demo</title>
+	<!-- Local css styling for the pages -->
+	<link type="text/css" rel="stylesheet" href="css/main.css">
+    <!-- Local jquery version -->
+    <script language="javascript" src="javascript/jquery-3.3.1.min.js"></script>
+    <script language="javascript" src="javascript/vkHTML5VideoPlayerControls.js"></script>
+</head>
+
+<body>
+	
+	<!-- The outer most wrapper to keep everything in check -->
+	<div id="container">
+		
+    	<!-- The inner container which holds all content -->
+    	<div id="content">
+	
+			<h1>HTML5 Video and Audio Demo</h1>
+            
+            <h2>Video podcast</h2>
+            
+            <div id="videoBox">
+                <!-- Video goes here -->
+                <video id="myVideo" width="480" height="300" preload="auto" poster="video/podcast-poster.jpg">
+                    <!-- controls: (included then true) (here removed for customized version) -->
+                    <!-- preload: none / metadata / auto -->
+                    <!-- autoplay: (included then true) -->
+                    <!-- loop: (included then true) -->
+                    <!-- different source files for different browser support -->
+                    <source src="video/podcast.mp4" type="video/mp4">
+                    <source src="video/podcast.webm" type="video/webm">
+                    <source src="video/podcast.ogv" type="video/ogg">
+                    <!-- subtitles -->
+                    <track src="video/podcast-captions.vtt" kind="captions" label="English" srclang="en" default />
+                    <!-- final fallback -->
+                    <p>Your browser does not support html5 video!</p>
+                </video>
+                <!-- additional container for the video controls -->
+                <div id="videoControls">
+                    <div id="playButton">Play</div>
+                    <!-- the full width blue bar -->
+                    <div id="progressBar">
+                        <!-- the growing blue bar -->
+                        <div id="loadProgress"></div>
+                        <!-- the growing green bar -->
+                        <div id="playProgress"></div>
+                    </div> <!-- END progressBar -->
+                    <!-- the container for the time controls -->
+                    <div id="timeControls">
+                        <!-- using span tags here puts both times next to each other -->
+                        <span id="currentTime">00:00</span> / 
+                        <span id="totalTime">00:00</span>
+                    </div> <!-- END timeControls -->
+                </div> <!-- END videoControls -->
+            </div> <!-- END videoBox -->
+            
+            <!-- offer the possibility to download the videos -->
+            <p class="download-links">
+                <strong>Download video: </strong>
+                <a href="#">MP4</a>,
+                <a href="#">OGG</a>,
+                <a href="#">WEBM</a>.
+            </p>
+            
+            <h2>Audio only podcast</h2>
+         
+            <!-- strictly speaking we do not need the audioBox, but let's be consistent -->
+            <div id="audioBox">
+                <!-- Audio goes here -->
+                <audio controls>
+                    <!-- controls: (included then true) -->
+                    <!-- autoplay: (included then true) -->
+                    <!-- loop: (included then true) -->
+                    <source src="audio/podcast-audio.mp3" type="audio/mp3">
+                    <source src="audio/podcast-audio.wav" type="audio/wav">
+                    <source src="audio/podcast-audio.oga" type="audio/ogg">
+                    <p>Your browser does not support html5 audio!</p>
+                </audio>
+            </div> <!-- END audioBox -->
+				
+  		</div><!-- END inner container --> 
+    
+	</div><!-- END container -->
+
+</body>
+</html>

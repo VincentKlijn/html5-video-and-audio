@@ -1,0 +1,6 @@
+AddType video/mp4  mp4 m4v
+AddType audio/mp3  mp3
+AddType video/ogg  ogv
+AddType audio/ogg  ogg oga
+AddType video/webm webm
+AddType audio/wav  wav
